@@ -1,36 +1,22 @@
-
 services:
   frontend:
     image: samurcorrea/movie-reviews-frontend:latest
-    build:
-      context: ./frontend
-      args:
-        - VITE_API_URL=http://localhost:5000
     ports:
-      - "3000:80"  # Cambiado a puerto 3000 para coincidir con FRONTEND_URL
-    environment:
-      - VITE_API_URL=http://localhost:5000
+      - "3000:80"
     depends_on:
       - backend
+    networks:
+      - movie-reviews-network
     restart: unless-stopped
 
   backend:
     image: samurcorrea/movie-reviews-backend:latest
-    build:
-      context: ./backend
     ports:
       - "5000:5000"
-    environment:
-      - PORT=5000
-      - MONGO_URI=mongodb+srv://samur:620759082@db-reviews.mz9d0di.mongodb.net/?retryWrites=true&w=majority&appName=db-reviews
-      - GOOGLE_CLIENT_ID=564452529145-kejt2k0gt2kr4k1fehre1jel38gk4rib.apps.googleusercontent.com
-      - GOOGLE_CLIENT_SECRET=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
-      - SESSION_SECRET=tu-clave-secreta
-      - FRONTEND_URL=http://localhost:3000
-      - BACKEND_URL=http://localhost:5000
-      - NODE_ENV=development
-      - TMDB_BEARER_TOKEN=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNWE5YjRkOGVkNTczNjAxZWYwMGVmMzJkZTk2ZDZkYiIsIm5iZiI6MTc0MzE1MzgwMC4yNTcsInN1YiI6IjY3ZTY2YTg4MTRiYmE2YWUzMTAwMjQ5YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eLHD7OxWGE3bMAAvfuribjcgpvvL002bLxxJGqpvawQ
-      - TMDB_API_KEY=25a9b4d8ed573601ef00ef32de96d6db
+    networks:
+      - movie-reviews-network
     restart: unless-stopped
 
-# Eliminamos el servicio mongo ya que estamos usando MongoDB Atlas
+networks:
+  movie-reviews-network:
+    driver: bridge
