@@ -16,3 +16,8 @@
 3.  Acceder a la aplicación:
 
     http://localhost:3000/
+
+4.  Inicia sesión con una cuenta Google o regístrate.
+
+    Usuario de prueba:
+    demo@example.com    123456
