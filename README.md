@@ -1,17 +1,18 @@
 # Movie Reviews App
 
-Aplicación de reseñas de películas con frontend en React y backend en Node.js.
+## Requisitos previos
+- Docker (versión 20.10.0 o superior)
+- Docker Compose (versión 2.0.0 o superior)
 
-## Instrucciones
 
-1. Asegúrate de tener Docker y Docker Compose instalados
-2. Ejecuta el siguiente comando:
+## Instrucciones de instalación
 
-docker-compose up -d
+1. Clonar el repositorio:
 
-3. Accede a la aplicación en http://localhost:3000
+2. Iniciar la aplicación:
 
-## Requisitos
+    docker-compose up -d
 
-- Docker y Docker Compose
-- Puertos 3000 y 5000 disponibles
+3.  Acceder a la aplicación:
+
+    http://localhost:3000/
