@@ -1,14 +1,17 @@
-# reviews-docker
+# Movie Reviews App
 
-# Clonar el repositorio
-git clone https://github.com/tu-usuario/movie-reviews.git
-cd movie-reviews
+Aplicación de reseñas de películas con frontend en React y backend en Node.js.
 
-# Iniciar los contenedores
+## Instrucciones
+
+1. Asegúrate de tener Docker y Docker Compose instalados
+2. Ejecuta el siguiente comando:
+
 docker-compose up -d
 
-# Verificar que los contenedores estén funcionando
-docker-compose ps
+3. Accede a la aplicación en http://localhost:3000
 
-# Ver logs si hay problemas
-docker-compose logs -f
+## Requisitos
+
+- Docker y Docker Compose
+- Puertos 3000 y 5000 disponibles
